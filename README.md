@@ -10,8 +10,12 @@ within Visual Studio 2015:
 + Image Addon
 + Truetype Font Addon
 + Font Addon
+
 Each of these addons can be added by right-clicking the solution name and
 navigating to Allegro 5 -> Add-ons
 
-### Sample Usage ###
-N / A
+### Object Components ###
++ Physics
++ Collider
++ Renderer
++ Text
