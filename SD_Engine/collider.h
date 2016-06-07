@@ -1,17 +1,17 @@
 #pragma once
 
-/* FIXME: should come from globals.h */
-const int TEMP_WIDTH = 800;
-const int TEMP_HEIGHT= 600;
-
 class Collider {
 protected:
 	float *x_position;
 	float *y_position;
 
+	int *window_width;
+	int *window_height;
+
 public:
 	Collider();
 
-	void Initialize(float *x_pos, float *y_pos);
+	void Initialize(float *x_pos, float *y_pos, int *window_width, 
+		int *width_height);
 	void CheckWindowBounds(void);
 };
