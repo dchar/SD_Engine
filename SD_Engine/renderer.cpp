@@ -2,21 +2,20 @@
 
 Renderer::Renderer() {
 	this->image = NULL;
-
-	this->ptr_x_position = nullptr;
-	this->ptr_y_position = nullptr;
+	this->position_ptr = nullptr;
+	this->width = nullptr;
+	this->height = nullptr;
 }
 
-void Renderer::Initialize(ALLEGRO_BITMAP *image, float *object_x_pos, float *object_y_pos) {
+void Renderer::Initialize(ALLEGRO_BITMAP *image, VectorXY *position, float *width, float *height) {
 	this->image = image;
-
-	this->ptr_x_position = object_x_pos;
-	this->ptr_y_position = object_y_pos;
-
-	al_draw_bitmap(this->image, (*this->ptr_x_position), (*this->ptr_y_position), 0);
+	this->position_ptr = position;
+	this->width = width;
+	this->height = height;
 }
-
 
 void Renderer::Redraw(void) {
-	al_draw_bitmap(this->image, (*this->ptr_x_position), (*this->ptr_y_position), 0);
+	al_draw_scaled_bitmap(this->image, 0, 0,
+		100, 100, (*this->position_ptr).x, (*this->position_ptr).y, *this->width, 
+		*this->height, 0);
 }

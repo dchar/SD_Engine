@@ -3,18 +3,19 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
 
+#include "vector_xy.h"
 
 class Renderer {
 protected:
 	ALLEGRO_BITMAP *image;
+	VectorXY *position_ptr;
 
-	float *ptr_x_position;
-	float *ptr_y_position;
+	float *width;
+	float *height;
 
 public:
 	Renderer();
 
-	void Initialize(ALLEGRO_BITMAP *image, float *x_pos, float *y_pos);
+	void Initialize(ALLEGRO_BITMAP *image, VectorXY *position, float *width, float *height);
 	void Redraw(void);
-
 };

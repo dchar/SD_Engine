@@ -1,34 +1,32 @@
 #include "collider.h"
 
-Collider::Collider() {
-	this->x_position = nullptr;
-	this->y_position = nullptr;
+#include <stdio.h>
 
+Collider::Collider() {
+	this->position = nullptr;
 	this->window_width = nullptr;
 	this->window_height = nullptr;
 }
 
-void Collider::Initialize(float *x_pos, float *y_pos, int *window_width, 
-	int *window_height) 
+void Collider::Initialize(VectorXY *position, float *window_width, float *window_height) 
 {
-	this->x_position = x_pos;
-	this->y_position = y_pos;
-
-	this->window_width = window_height;
+	this->position = position;
+	this->window_width = window_width;
 	this->window_height = window_height;
 }
 
 void Collider::CheckWindowBounds(void) {
-	int cast_x_pos = static_cast<int>(*this->x_position);
-	int cast_y_pos = static_cast<int>(*this->y_position);
-	int height = *this->window_height;
-	int width = *this->window_width;
-
-	if (cast_y_pos < 0) {
-		(*this->y_position) = 0;
+	if ((*this->position).x < 0) {
+		(*this->position).x = 0;
 	}
-	if (cast_y_pos > height - 50) {
-		(*this->y_position) = height - 50;
+	else if ((*this->position).x > *this->window_width - 50) {
+		(*this->position).x = *this->window_width - 50;
 	}
 
+	if ((*this->position).y < 0) {
+		(*this->position).y = 0;
+	}
+	else if ((*this->position).y > *this->window_height - 50) {
+		(*this->position).y = *this->window_height - 50;
+	}
 }

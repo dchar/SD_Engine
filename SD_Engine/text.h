@@ -4,19 +4,29 @@
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
 
+#include "vector_xy.h"
+
 using namespace std;
 
 class Text {
 protected:
-	float *x_position;
-	float *y_position;
-
-	string *string_msg_ptr;
 	ALLEGRO_FONT *font;
+	string *string_msg_ptr;
+
+	VectorXY *position_ptr;
+	VectorXY offset;
+
+	float max_width;
+	float line_height;
 public:
 	Text();
+	void Initialize(ALLEGRO_FONT *font, string *msg, VectorXY *position);
 
-	void Initialize(ALLEGRO_FONT *font, string *msg, float *x_pos, float *y_pos);
 	void SetMessage(string *msg);
+	void SetXOffset(float x_off);
+	void SetYOffset(float y_off);
+	void SetMaxWidth(float max);
+	void SetLineHeight(float height);
+
 	void Redraw(void);
 };

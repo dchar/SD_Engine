@@ -73,12 +73,15 @@
     <Allegro_AddonImage>true</Allegro_AddonImage>
     <Allegro_AddonFont>true</Allegro_AddonFont>
     <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,6 +127,7 @@
     <ClCompile Include="physics.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="text.cpp" />
+    <ClCompile Include="vector_xy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="collider.h" />
@@ -132,6 +136,7 @@
     <ClInclude Include="physics.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="text.h" />
+    <ClInclude Include="vector_xy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

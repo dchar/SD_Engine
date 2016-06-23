@@ -1,17 +1,17 @@
 #pragma once
 
+#include "vector_xy.h"
+
 class Collider {
 protected:
-	float *x_position;
-	float *y_position;
+	VectorXY *position;
 
-	int *window_width;
-	int *window_height;
+	float *window_width;
+	float *window_height;
 
 public:
 	Collider();
 
-	void Initialize(float *x_pos, float *y_pos, int *window_width, 
-		int *width_height);
+	void Initialize(VectorXY *position, float *window_width, float *width_height);
 	void CheckWindowBounds(void);
 };

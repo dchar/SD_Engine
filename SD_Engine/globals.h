@@ -14,3 +14,5 @@ const char* DEFAULT_IMAGE_PATH = "default.png";
 /* Fonts */
 const char* LUCIDA_SANS_ITALIC = "lucida_sans_italic.ttf";
 const char* OPEN_SANS = "open_sans.ttf";
+
+const float GRAVITY = float(9.81);
